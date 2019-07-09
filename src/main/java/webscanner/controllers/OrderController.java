@@ -2,8 +2,10 @@ package webscanner.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import webscanner.models.HtmlOrdersEntity;
-import webscanner.repositories.HtmlOrdersEntityRepository;
+import webscanner.models.HtmlOrder;
+import webscanner.models.ServerOrder;
+import webscanner.repositories.HtmlOrderRepository;
+import webscanner.repositories.ServerOrderRepository;
 
 import java.util.List;
 
@@ -11,16 +13,19 @@ import java.util.List;
 public class OrderController {
 
 	@Autowired
-	private HtmlOrdersEntityRepository htmlOrderRepository;
+	private HtmlOrderRepository htmlOrderRepository;
 
-//	@GetMapping("order/server")
-//	public List<ServerOrder> GetUserServerOrders(){
-//		return null;
-//	}
+	@Autowired
+	private ServerOrderRepository serverOrderRepository;
+
+	@GetMapping("order/server")
+	public List<ServerOrder> GetUserServerOrders(){
+		return serverOrderRepository.getServerOrdersForUser("d4c82104-34f8-4b79-ac03-1e7478716dcc");
+	}
 
 	@GetMapping("order/html")
-	public List<HtmlOrdersEntity> GetUserHtmlOrders(){
-		return htmlOrderRepository.getHtmlOrdersEntityForUser("d4c82104-34f8-4b79-ac03-1e7478716dcc");
+	public List<HtmlOrder> GetUserHtmlOrders(){
+		return htmlOrderRepository.getHtmlOrdersForUser("d4c82104-34f8-4b79-ac03-1e7478716dcc");
 	}
 
 //	@PostMapping("order/server")

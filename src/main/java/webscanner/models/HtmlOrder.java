@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "HtmlOrders", schema = "public", catalog = "webscanner")
-public class HtmlOrdersEntity {
+public class HtmlOrder {
     private int id;
     private int frequency;
     private String targetAddress;
@@ -55,7 +55,7 @@ public class HtmlOrdersEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        HtmlOrdersEntity that = (HtmlOrdersEntity) o;
+        HtmlOrder that = (HtmlOrder) o;
 
         if (id != that.id) return false;
         if (frequency != that.frequency) return false;

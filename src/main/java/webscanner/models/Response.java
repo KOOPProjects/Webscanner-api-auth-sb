@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "Responses", schema = "public", catalog = "webscanner")
-public class ResponsesEntity {
+@Table(name = "\"Responses\"", schema = "public", catalog = "webscanner")
+public class Response {
     private int id;
     private int orderId;
     private Timestamp date;
@@ -67,7 +67,7 @@ public class ResponsesEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ResponsesEntity that = (ResponsesEntity) o;
+        Response that = (Response) o;
 
         if (id != that.id) return false;
         if (orderId != that.orderId) return false;

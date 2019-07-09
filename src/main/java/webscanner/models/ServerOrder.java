@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "ServerOrders", schema = "public", catalog = "webscanner")
-public class ServerOrdersEntity {
+public class ServerOrder {
     private int id;
     private int frequency;
     private String targetAddress;
@@ -55,7 +55,7 @@ public class ServerOrdersEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ServerOrdersEntity that = (ServerOrdersEntity) o;
+        ServerOrder that = (ServerOrder) o;
 
         if (id != that.id) return false;
         if (frequency != that.frequency) return false;
