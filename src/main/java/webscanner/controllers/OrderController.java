@@ -20,7 +20,7 @@ public class OrderController {
 
 	@GetMapping("order/html")
 	public List<HtmlOrdersEntity> GetUserHtmlOrders(){
-		return htmlOrderRepository.getHtmlOrdersForUser("d4c82104-34f8-4b79-ac03-1e7478716dcc");
+		return htmlOrderRepository.getHtmlOrdersEntityForUser("d4c82104-34f8-4b79-ac03-1e7478716dcc");
 	}
 
 //	@PostMapping("order/server")

@@ -11,6 +11,6 @@ import java.util.List;
 @Repository
 public interface HtmlOrdersEntityRepository extends CrudRepository<HtmlOrdersEntity, Integer> {
 
-    @Query(value = "SELECT a.\"Id\", a.\"Frequency\", a.\"TargetAddress\", a.\"SubjectOfQuestion\" FROM public.\"HtmlOrders\" a WHERE a.\"Id\" in (SELECT b.\"OrderId\" FROM public.\"UserOrders\" b WHERE b.\"UserId\" =:userId)", nativeQuery = true)
-    List<HtmlOrdersEntity> getHtmlOrdersForUser(@Param("userId")String userId);
+    @Query(value = "SELECT a.\"Id\", a.\"Frequency\", a.\"TargetAddress\" AS \"target_address\", a.\"SubjectOfQuestion\" AS \"subject_of_question\" FROM public.\"HtmlOrders\" a WHERE a.\"Id\" in (SELECT b.\"OrderId\" FROM public.\"UserOrders\" b WHERE b.\"UserId\" =:userId)", nativeQuery = true)
+    List<HtmlOrdersEntity> getHtmlOrdersEntityForUser(@Param("userId")String userId);
 }

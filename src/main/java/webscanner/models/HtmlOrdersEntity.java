@@ -41,7 +41,7 @@ public class HtmlOrdersEntity {
     }
 
     @Basic
-    @Column(name = "\"SubjectOfQuestion\"", nullable = true, length = -1)
+    @Column(name = "SubjectOfQuestion", nullable = true, length = -1)
     public String getSubjectOfQuestion() {
         return subjectOfQuestion;
     }
