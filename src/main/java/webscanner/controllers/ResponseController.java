@@ -19,8 +19,8 @@ public class ResponseController {
     @Autowired
     private ResponseRepository responseRepository;
 
-	@GetMapping("response")
-	public List<Response> GetOrderResponses(int id, String type){
-		return responseRepository.getResponsesByOrderIdAndType(id, type);
+	@GetMapping("api/response")
+	public List<Response> GetOrderResponses(int orderId, String orderType){
+		return responseRepository.getResponsesByOrderIdAndType(orderId, orderType);
 	}
 }

@@ -10,4 +10,5 @@ import java.util.List;
 @Repository
 public interface ResponseRepository extends CrudRepository<Response, Integer> {
     List<Response> getResponsesByOrderIdAndType(int orderId, String type);
+
 }
